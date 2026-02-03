@@ -1,0 +1,153 @@
+{
+  "personalInfo": {
+    "name": "徐郡婕",
+    "englishName": "Xu Junjie",
+    "title": "分镜导演 / 产品探索者",
+    "welcomeMessage": "欢迎来到我的个人网站！",
+    "subTitle": "探索视觉叙事的边界，打造极致轻量的工具体验。",
+    "email": "junjie@example.com",
+    "wechat": "junjie_storyboard",
+    "github": "https://github.com/xujunjie",
+    "avatar": "/avatar.jpg",
+    "contactHeading": "聊聊新的可能"
+  },
+  "research": {
+    "title": "研究报告",
+    "description": "深耕视觉叙事与技术融合的前沿探索，为机构与企业提供深度的行业洞察。",
+    "reports": [
+      {
+        "id": "res-1",
+        "title": "2025 AIGC 在影视分镜领域的应用潜力研究",
+        "client": "未来影像实验室",
+        "field": "AI & 影视",
+        "year": "2025",
+        "summary": "本报告深入探讨了生成式 AI 如何重塑传统分镜流程，通过实测数据分析了 AI 在提高构图效率与叙事一致性方面的具体表现。",
+        "link": "#"
+      },
+      {
+        "id": "res-2",
+        "title": "极简主义工具的心理学边界探索",
+        "client": "效率研究所",
+        "field": "UX 设计",
+        "year": "2024",
+        "summary": "从认知心理学角度分析用户对‘轻量化’工具的依赖路径，提出了‘减法设计’在复杂工作流中的核心价值。",
+        "link": "#"
+      }
+    ]
+  },
+  "careerTimeline": [
+    {
+      "stage": "工科学习",
+      "period": "2014 - 2018",
+      "desc": "在严谨的工程逻辑中，建立对系统架构与精密制造的底层认知，为后续跨界奠定理性基础。",
+      "icon": "Settings"
+    },
+    {
+      "stage": "科技成果管理",
+      "period": "2018 - 2020",
+      "desc": "链接实验室与市场，主导多项硬核科技成果的商业化落地，学会如何在复杂利益链中寻求最优解。",
+      "icon": "Briefcase"
+    },
+    {
+      "stage": "信息技术研究",
+      "period": "2020 - 2023",
+      "desc": "沉入数字浪潮，深度调研新兴技术趋势，专注于数字化转型与视觉叙事工具的融合实验。",
+      "icon": "Search"
+    },
+    {
+      "stage": "一人公司/AI训练营",
+      "period": "2023 - 至今",
+      "desc": "拥抱超级个体时代。创立独立工作室，深度参与 WaytoAGI 与 VIBE CODING 社区，探索 AI 驱动的极致创作效率。",
+      "icon": "Cpu"
+    }
+  ],
+  "detailedProjects": [
+    {
+      "id": "ai-1",
+      "category": "AI工作流",
+      "name": "自动化分镜生成工作流",
+      "description": "基于 WaytoAGI 社区共创的 AI 驱动工作流，实现从剧本到初版分镜的自动化闭环。",
+      "image": "https://picsum.photos/800/600?random=10",
+      "tags": ["ComfyUI", "GPT-4", "Stable Diffusion"],
+      "featured": true
+    },
+    {
+      "id": "video-1",
+      "category": "短视频作品",
+      "name": "《数字游民的24小时》",
+      "description": "一部探索未来办公生活方式的短片，采用非线性叙事手法。",
+      "image": "https://picsum.photos/800/600?random=11",
+      "tags": ["剪映", "分镜导演", "调色"],
+      "featured": true
+    },
+    {
+      "id": "code-1",
+      "category": "代码项目",
+      "name": "VIBE CODING 效率插件",
+      "description": "为开发者打造的轻量化代码片段 management 工具，追求极致的‘VIBE’体验。",
+      "image": "https://picsum.photos/800/600?random=12",
+      "tags": ["React", "Tailwind", "Vite"],
+      "featured": true
+    },
+    {
+      "id": "software-1",
+      "category": "代码项目",
+      "name": "极速截图",
+      "description": "解决工具臃肿痛点的轻量化截图方案，极致简约，秒速响应。",
+      "image": "https://picsum.photos/800/600?random=13",
+      "tags": ["Qt", "C++", "Python"],
+      "featured": true
+    }
+  ],
+  "projects": [
+    {
+      "id": "xianxia",
+      "category": "Storyboard",
+      "title": "唯美仙侠系列",
+      "description": "深度参与多部顶流仙侠剧集的分镜设计，追求极致的画面构图与叙事节奏。",
+      "tags": ["分镜设计", "场景构思", "叙事节奏"],
+      "items": [
+        { "name": "洛琊生", "image": "https://picsum.photos/800/600?random=1" },
+        { "name": "千刃仙尊", "image": "https://picsum.photos/800/600?random=2" },
+        { "name": "黄小眉", "image": "https://picsum.photos/800/600?random=3" }
+      ]
+    },
+    {
+      "id": "software",
+      "category": "Software",
+      "title": "极速截图",
+      "description": "解决工具臃肿痛点的轻量化截图方案，极致简约，秒速响应。",
+      "tags": ["工具开发", "UX设计", "轻量化"],
+      "items": [
+        { "name": "极速截图 App", "image": "https://picsum.photos/800/600?random=4" }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "year": "2018 - 2020",
+      "company": "初创影视工作室",
+      "role": "初级分镜师",
+      "desc": "参与多部网剧分镜绘制，积累了扎实的叙事基本功。"
+    },
+    {
+      "year": "2020 - 2022",
+      "company": "知名传媒公司",
+      "role": "高级分镜导演",
+      "desc": "主导大制作仙侠项目分镜，建立了一套高效的视觉预演流程。"
+    },
+    {
+      "year": "2023 - 至今",
+      "company": "个人工作室 / 产品探索",
+      "role": "独立开发者 & 导演",
+      "desc": "探索跨界可能，开发了‘极速截图’等效率工具，同时持续深耕分镜艺术。"
+    }
+  ],
+  "navLinks": [
+    { "name": "首页", "path": "/" },
+    { "name": "关于", "path": "/about" },
+    { "name": "研究", "path": "/research" },
+    { "name": "作品", "path": "/projects" },
+    { "name": "联系", "path": "/#contact" }
+  ]
+}
