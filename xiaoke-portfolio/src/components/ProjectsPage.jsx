@@ -3,24 +3,30 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import siteData from '../data/siteData.json';
 import { LayoutGrid, Play, Code, Filter, Lightbulb, Target, Zap } from 'lucide-react';
+import VideoModal from './VideoModal';
+import IframeModal from './IframeModal';
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState('全部');
   const [searchParams] = useSearchParams();
   const [selectedId, setSelectedId] = useState(null);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState('');
+  const [iframeModalOpen, setIframeModalOpen] = useState(false);
+  const [currentIframeUrl, setCurrentIframeUrl] = useState('');
+  const [currentIframeTitle, setCurrentIframeTitle] = useState('');
   const itemRefs = useRef({});
 
   // 核心逻辑：从 URL 获取选中 ID 并同步状态与滚动
   useEffect(() => {
     const selectedParam = searchParams.get('selected');
     if (selectedParam) {
-      const id = selectedParam; // 这里的 ID 可能是字符串 (sb-01 等)
+      const id = selectedParam;
       const item = siteData.detailedProjects.find(i => i.id === id);
       if (item) {
-        setFilter('全部'); // 确保在“全部”分类下，以便能看到搜索到的项
+        setFilter('全部');
         setSelectedId(id);
         
-        // 延迟执行滚动，确保 DOM 已渲染
         setTimeout(() => {
           const element = itemRefs.current[id];
           if (element) {
@@ -32,7 +38,6 @@ const ProjectsPage = () => {
   }, [searchParams]);
 
   const categories = ['全部', 'AI工作流', '短视频作品', '代码项目'];
-
 
   const filteredProjects = filter === '全部' 
     ? siteData.detailedProjects 
@@ -47,8 +52,33 @@ const ProjectsPage = () => {
     }
   };
 
+  const handleLinkClick = (e, project) => {
+    if (project.videoUrl) {
+      e.preventDefault();
+      setCurrentVideoUrl(project.videoUrl);
+      setVideoModalOpen(true);
+    } else if (project.type === 'iframe') {
+      e.preventDefault();
+      setCurrentIframeUrl(project.link);
+      setCurrentIframeTitle(project.name);
+      setIframeModalOpen(true);
+    }
+  };
+
   return (
     <div className="pt-32 pb-24 min-h-screen bg-pure-white selection:bg-pure-black selection:text-pure-white">
+      <VideoModal 
+        isOpen={videoModalOpen} 
+        onClose={() => setVideoModalOpen(false)} 
+        videoUrl={currentVideoUrl} 
+      />
+      <IframeModal
+        isOpen={iframeModalOpen}
+        onClose={() => setIframeModalOpen(false)}
+        url={currentIframeUrl}
+        title={currentIframeTitle}
+      />
+      
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
@@ -113,22 +143,11 @@ const ProjectsPage = () => {
                 }`}
               >
                 <div className="aspect-[16/10] overflow-hidden relative bg-light-grey group">
-                  {project.mediaType === 'video' ? (
-                    <video
-                      src={project.image}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                    />
-                  ) : (
-                    <img 
-                      src={project.image} 
-                      alt={project.name} 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                    />
-                  )}
+                  <img 
+                    src={project.image} 
+                    alt={project.name} 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  />
                   <div className="absolute top-4 left-4">
                     <span className="flex items-center gap-2 px-3 py-1 bg-pure-white/90 backdrop-blur-sm text-pure-black text-[10px] font-bold tracking-widest uppercase rounded-full shadow-sm">
                       {getIcon(project.category)}
@@ -179,7 +198,8 @@ const ProjectsPage = () => {
                         href={project.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-[10px] font-bold uppercase tracking-widest text-blue-600 border-b border-blue-600/30 hover:border-blue-600 transition-colors"
+                        onClick={(e) => handleLinkClick(e, project)}
+                        className="text-[10px] font-bold uppercase tracking-widest text-blue-600 border-b border-blue-600/30 hover:border-blue-600 transition-colors cursor-pointer"
                       >
                         {project.linkText || '查看详情'}
                       </a>

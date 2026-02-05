@@ -70,8 +70,8 @@
       "painPoint": "内存占用过高（>130MB），导致多任务切换卡顿",
       "solution": "基于 Python + PyQt6 轻量化开发，内存 <50MB",
       "idea": "剥离非核心社交功能，只保留“截图+离线OCR+翻译”，实现毫秒级响应。",
-      "image": "/20260129_211939.mp4",
-      "mediaType": "video",
+      "image": "https://picsum.photos/800/600?random=13",
+      "videoUrl": "/20260129_211939.mp4",
       "tags": ["Python", "PyQt6", "生产力工具"],
       "link": "#",
       "linkText": "查看演示",
@@ -89,6 +89,7 @@
       "tags": ["AI", "GenAI", "传统文化"],
       "link": "https://2d7f4fa29c264b8ebc9e2f6e5bb6b844-latest.preview.enter.pro/",
       "linkText": "在线体验",
+      "type": "iframe",
       "featured": true
     },
     {
