@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './Hero';
 import ProjectGallery from './ProjectGallery';
+import LearningJourney from './LearningJourney';
 import ResearchPreview from './ResearchPreview';
 import ExperienceTimeline from './ExperienceTimeline';
 
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <Hero />
       <ProjectGallery />
+      <LearningJourney />
       <ResearchPreview />
       <ExperienceTimeline />
     </>
