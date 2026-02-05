@@ -112,12 +112,23 @@ const ProjectsPage = () => {
                   : 'border-transparent hover:border-pure-black/5'
                 }`}
               >
-                <div className="aspect-[16/10] overflow-hidden relative bg-light-grey">
-                  <img 
-                    src={project.image} 
-                    alt={project.name} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  />
+                <div className="aspect-[16/10] overflow-hidden relative bg-light-grey group">
+                  {project.mediaType === 'video' ? (
+                    <video
+                      src={project.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    />
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={project.name} 
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    />
+                  )}
                   <div className="absolute top-4 left-4">
                     <span className="flex items-center gap-2 px-3 py-1 bg-pure-white/90 backdrop-blur-sm text-pure-black text-[10px] font-bold tracking-widest uppercase rounded-full shadow-sm">
                       {getIcon(project.category)}
