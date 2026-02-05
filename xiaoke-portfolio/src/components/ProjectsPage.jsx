@@ -155,12 +155,24 @@ const ProjectsPage = () => {
                     </div>
                   )}
 
-                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-pure-black/5">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[9px] font-bold uppercase tracking-widest text-pure-black/40 px-2 py-1 bg-pure-black/5 rounded-sm">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-pure-black/5 items-center justify-between">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-[9px] font-bold uppercase tracking-widest text-pure-black/40 px-2 py-1 bg-pure-black/5 rounded-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {project.link && (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[10px] font-bold uppercase tracking-widest text-blue-600 border-b border-blue-600/30 hover:border-blue-600 transition-colors"
+                      >
+                        {project.linkText || '查看详情'}
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

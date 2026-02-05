@@ -122,13 +122,23 @@ const Contact = () => {
         </div>
 
         <div className="mt-24 pt-8 border-t border-pure-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-pure-white/40 uppercase tracking-widest">
-          <p>© 2026 {siteData.personalInfo.englishName}</p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p>© 2026 {siteData.personalInfo.englishName}</p>
+            <span className="hidden md:inline">|</span>
+            <p>Vibe Coding 第四期学员</p>
+          </div>
           <div className="flex gap-8 lg:hidden">
             {siteData.navLinks.map(link => (
               <Link key={link.path} to={link.path}>{link.name}</Link>
             ))}
           </div>
-          <p>Built with React & Tailwind</p>
+          <div className="flex items-center gap-4">
+            <a href={siteData.personalInfo.github} target="_blank" rel="noreferrer" className="hover:text-pure-white transition-colors">
+              GitHub
+            </a>
+            <span>|</span>
+            <p>Built with React & Tailwind</p>
+          </div>
         </div>
       </div>
     </footer>
