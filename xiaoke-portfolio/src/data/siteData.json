@@ -63,10 +63,37 @@
   ],
   "detailedProjects": [
     {
+      "id": "software-1",
+      "category": "代码项目",
+      "name": "极速截图 (SuperCapture)",
+      "description": "一个基于 Python + PyQt6 开发的极致轻量化截图工具，解决微信截图内存占用大（>130MB）的痛点，实现离线OCR和智能翻译。",
+      "painPoint": "内存占用过高（>130MB），导致多任务切换卡顿",
+      "solution": "基于 Python + PyQt6 轻量化开发，内存 <50MB",
+      "idea": "剥离非核心社交功能，只保留“截图+离线OCR+翻译”，实现毫秒级响应。",
+      "image": "https://picsum.photos/800/600?random=13",
+      "tags": ["Python", "PyQt6", "轻量化"],
+      "featured": true
+    },
+    {
+      "id": "ai-2",
+      "category": "AI工作流",
+      "name": "词意生花 (Word to Art)",
+      "description": "基于 Enter.pro 和阿里云百炼大模型的 AI 应用。输入心情，一键生成宋词与水墨画。",
+      "painPoint": "普通人难以创作合规宋词且缺乏匹配意境的视觉艺术",
+      "solution": "AI 驱动“文图双生”，一键生成宋词与水墨画",
+      "idea": "利用阿里云百炼大模型整合文化创意与 AI 生成力，实现文图双生。",
+      "image": "https://picsum.photos/800/600?random=14",
+      "tags": ["阿里云百炼", "AI生成", "文化创意"],
+      "featured": true
+    },
+    {
       "id": "ai-1",
       "category": "AI工作流",
       "name": "自动化分镜生成工作流",
       "description": "基于 WaytoAGI 社区共创的 AI 驱动工作流，实现从剧本到初版分镜的自动化闭环。",
+      "painPoint": "传统分镜绘制周期长，修改成本高",
+      "solution": "ComfyUI + GPT-4 自动化生成工作流",
+      "idea": "将剧本结构化数据直接映射为画面提示词，实现秒级生成。",
       "image": "https://picsum.photos/800/600?random=10",
       "tags": ["ComfyUI", "GPT-4", "Stable Diffusion"],
       "featured": true
@@ -87,15 +114,6 @@
       "description": "为开发者打造的轻量化代码片段 management 工具，追求极致的‘VIBE’体验。",
       "image": "https://picsum.photos/800/600?random=12",
       "tags": ["React", "Tailwind", "Vite"],
-      "featured": true
-    },
-    {
-      "id": "software-1",
-      "category": "代码项目",
-      "name": "极速截图",
-      "description": "解决工具臃肿痛点的轻量化截图方案，极致简约，秒速响应。",
-      "image": "https://picsum.photos/800/600?random=13",
-      "tags": ["Qt", "C++", "Python"],
       "featured": true
     }
   ],

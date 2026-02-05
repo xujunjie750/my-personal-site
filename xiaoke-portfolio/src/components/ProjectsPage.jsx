@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import siteData from '../data/siteData.json';
-import { LayoutGrid, Play, Code, Filter } from 'lucide-react';
+import { LayoutGrid, Play, Code, Filter, Lightbulb, Target, Zap } from 'lucide-react';
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState('全部');
@@ -127,9 +127,34 @@ const ProjectsPage = () => {
                 </div>
                 <div className="p-8 flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold mb-3 group-hover:translate-x-1 transition-transform">{project.name}</h3>
-                  <p className="text-sm font-light text-pure-black/60 leading-relaxed mb-8 line-clamp-3 flex-1">
+                  <p className="text-sm font-light text-pure-black/60 leading-relaxed mb-6 line-clamp-3">
                     {project.description}
                   </p>
+
+                  {/* 核心思路模块 */}
+                  {(project.painPoint || project.idea) && (
+                    <div className="mb-6 p-4 bg-pure-white/50 rounded-sm border border-pure-black/5 space-y-3">
+                      {project.painPoint && (
+                        <div className="flex items-start gap-2">
+                          <Target size={14} className="text-red-500 mt-0.5 shrink-0" />
+                          <p className="text-xs text-pure-black/70 leading-relaxed"><span className="font-bold">痛点：</span>{project.painPoint}</p>
+                        </div>
+                      )}
+                      {project.solution && (
+                        <div className="flex items-start gap-2">
+                          <Zap size={14} className="text-blue-500 mt-0.5 shrink-0" />
+                          <p className="text-xs text-pure-black/70 leading-relaxed"><span className="font-bold">方案：</span>{project.solution}</p>
+                        </div>
+                      )}
+                      {project.idea && (
+                        <div className="flex items-start gap-2">
+                          <Lightbulb size={14} className="text-yellow-500 mt-0.5 shrink-0" />
+                          <p className="text-xs text-pure-black/70 leading-relaxed"><span className="font-bold">思路：</span>{project.idea}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-pure-black/5">
                     {project.tags.map(tag => (
                       <span key={tag} className="text-[9px] font-bold uppercase tracking-widest text-pure-black/40 px-2 py-1 bg-pure-black/5 rounded-sm">

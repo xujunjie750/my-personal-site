@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-// 重要：取消注释并确保路径正确
+// 修正路径：从上一级目录的data文件夹导入
 import researchData from '../data/researchData.js';
 
 function Research() {
@@ -9,15 +9,15 @@ function Research() {
   const [selectedId, setSelectedId] = useState(researchData[0]?.id || null);
   const [filterType, setFilterType] = useState('all'); // 'all', 'provincial', 'horizontal'
 
-  // 核心新增：读取URL中的 `selected` 参数
+  // 核心修复：正确使用useSearchParams
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSelectedId = searchParams.get('selected');
 
-  // 核心新增：如果URL中有ID，则用它作为初始选中项
+  // 核心修复：如果URL中有ID，则用它作为初始选中项
   useEffect(() => {
     console.log('URL参数:', urlSelectedId);
     
-    if (urlSelectedId) {
+    if (urlSelectedId && researchData.length > 0) {
       const idToSelect = parseInt(urlSelectedId, 10);
       // 检查ID是否有效且在数据中存在
       if (!isNaN(idToSelect) && researchData.some(item => item.id === idToSelect)) {
@@ -27,7 +27,7 @@ function Research() {
         console.log('URL中的ID无效或不存在:', idToSelect);
       }
     }
-  }, [urlSelectedId]); // 移除researchData依赖，因为是常量
+  }, [urlSelectedId]);
 
   // 1. 根据筛选类型过滤数据
   const filteredData = useMemo(() => {
