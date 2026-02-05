@@ -195,8 +195,8 @@ const ProjectsPage = () => {
                     </div>
                     {project.link && (
                       <a 
-                        href={project.link} 
-                        target="_blank" 
+                        href={project.videoUrl || project.type === 'iframe' ? '#' : project.link} 
+                        target={project.videoUrl || project.type === 'iframe' ? '_self' : '_blank'}
                         rel="noopener noreferrer"
                         onClick={(e) => handleLinkClick(e, project)}
                         className="text-[10px] font-bold uppercase tracking-widest text-blue-600 border-b border-blue-600/30 hover:border-blue-600 transition-colors cursor-pointer"
