@@ -21,29 +21,13 @@ const IframeModal = ({ isOpen, onClose, url, title }) => {
           onClick={(e) => e.stopPropagation()}
           className="relative w-full max-w-6xl h-[85vh] bg-white rounded-sm overflow-hidden shadow-2xl border border-pure-white/10 flex flex-col"
         >
-          {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 bg-pure-black text-pure-white">
-            <h3 className="text-sm font-bold tracking-widest uppercase truncate max-w-[70%]">
-              {title || '在线体验'}
-            </h3>
-            <div className="flex items-center gap-4">
-              <a 
-                href={url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-pure-white/60 hover:text-pure-white transition-colors"
-                title="在新窗口打开"
-              >
-                <ExternalLink size={18} />
-              </a>
-              <button
-                onClick={onClose}
-                className="text-pure-white/60 hover:text-pure-white transition-colors"
-              >
-                <X size={20} />
-              </button>
-            </div>
-          </div>
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full transition-colors"
+          >
+            <X size={24} />
+          </button>
 
           {/* Iframe Container */}
           <div className="flex-1 bg-light-grey relative">
