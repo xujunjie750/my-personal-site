@@ -18,7 +18,7 @@ const Contact = () => {
   };
 
   return (
-    <footer id="contact" className="bg-pure-black text-pure-white py-24">
+    <footer id="contact" className="bg-pure-black text-pure-white py-10">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column: Info */}

@@ -9,7 +9,7 @@ const ResearchPreview = () => {
   const featuredResearch = researchData.slice(0, 3);
 
   return (
-    <section className="py-24 bg-white border-y border-pure-black/5">
+    <section className="py-10 bg-white border-y border-pure-black/5">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">

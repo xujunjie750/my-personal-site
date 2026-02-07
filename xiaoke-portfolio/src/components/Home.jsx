@@ -1,19 +1,15 @@
 import React from 'react';
 import Hero from './Hero';
 import ProjectGallery from './ProjectGallery';
-import LearningJourney from './LearningJourney';
-import ResearchPreview from './ResearchPreview';
-import ExperienceTimeline from './ExperienceTimeline';
 
 const Home = () => {
   return (
-    <>
+    <div className="flex flex-col w-full bg-white">
       <Hero />
-      <ProjectGallery />
-      <LearningJourney />
-      <ResearchPreview />
-      <ExperienceTimeline />
-    </>
+      <div className="w-full">
+        <ProjectGallery />
+      </div>
+    </div>
   );
 };
 

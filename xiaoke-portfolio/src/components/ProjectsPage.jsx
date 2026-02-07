@@ -81,7 +81,7 @@ const ProjectsPage = () => {
       
       <div className="container mx-auto px-6">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -212,7 +212,7 @@ const ProjectsPage = () => {
         </motion.div>
 
         {filteredProjects.length === 0 && (
-          <div className="py-32 text-center">
+          <div className="py-12 text-center">
             <p className="text-pure-black/30 font-light italic">该分类下暂无作品</p>
           </div>
         )}

@@ -47,3 +47,14 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* 让整个网页至少占满一屏幕高度 */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 让中间的主体部分自动撑开，把 Footer 顶到底部 */
+main {
+  flex: 1;
+}

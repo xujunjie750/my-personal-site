@@ -25,9 +25,9 @@ const LearningJourney = () => {
   ];
 
   return (
-    <section className="py-24 bg-pure-white border-t border-pure-black/5">
+    <section className="py-10 bg-pure-white border-t border-pure-black/5">
       <div className="container mx-auto px-6 max-w-5xl">
-        <div className="mb-20 text-center">
+        <div className="mb-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const LearningJourney = () => {
           {/* Central Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[1px] bg-gradient-to-b from-pure-black/5 via-pure-black/20 to-pure-black/5 hidden md:block"></div>
 
-          <div className="space-y-12 md:space-y-24">
+          <div className="space-y-12 md:space-y-8">
             {journeySteps.map((step, idx) => (
               <motion.div
                 key={idx}

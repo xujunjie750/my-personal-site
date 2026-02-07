@@ -4,7 +4,7 @@ import siteData from '../data/siteData.json';
 
 const ExperienceTimeline = () => {
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-10">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16 text-center">
